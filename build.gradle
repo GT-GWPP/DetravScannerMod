@@ -26,9 +26,9 @@ file "build.properties" withReader {
     ext.config = new ConfigSlurper().parse prop
 }
 
-version = "${config.detravscanner.version}"
+version = "1.0.1-universal"
 group= "com.detrav.detravscannermod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "GT Scanner Mod"
+archivesBaseName = "DetravScannerMod-GWPP-Edition-1.7.10"
 
 minecraft {
     version = "${config.minecraft.version}-${config.forge.version}"
