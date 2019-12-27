@@ -7,7 +7,7 @@ import com.detrav.net.DetravNetwork;
 import com.detrav.proxies.CommonProxy;
 import com.detrav.utils.DetravCreativeTab;
 import com.detrav.utils.GTppHelper;
-
+import com.detrav.utils.FluidColors;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -56,17 +56,10 @@ public class DetravScannerMod
         proxy.onPreInit();
     }
 
-        @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
-		// some example code
-        //System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
-        NetworkRegistry.INSTANCE.registerGuiHandler(instance, proxy );
-    }
 
     @EventHandler
-    public void onLoad(FMLInitializationEvent aEvent)
-    {
+    public void init(FMLInitializationEvent event) {
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, proxy);
         proxy.onLoad();
     }
 
@@ -76,7 +69,7 @@ public class DetravScannerMod
         if (Loader.isModLoaded("miscutils"))
         	GTppHelper.generate_OreIDs();
 
-        DetravProPickPacket00.reFillFluidColors();
+        FluidColors.makeColors();
     }
 
 }
