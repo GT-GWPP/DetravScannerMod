@@ -127,7 +127,7 @@ public class DetravGuiProPick extends GuiScreen {
             //drawString(fontRendererObj,);
             //fontRendererObj.drawString(fontRendererObj.trimStringToWidth())
 
-            fontRendererObj.drawString(fontRendererObj.trimStringToWidth(keys.get(slotIdx), listWidth - 10), this.left + 3 , slotTop + 2, ores.get(keys.get(slotIdx)));
+            fontRendererObj.drawString(fontRendererObj.trimStringToWidth(keys.get(slotIdx), listWidth - 10), this.left + 3, slotTop+2, ores.get(keys.get(slotIdx)));
 
         }
     }

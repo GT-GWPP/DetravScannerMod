@@ -1,12 +1,10 @@
 package com.detrav;
 
-import com.detrav.net.DetravProPickPacket00;
 import org.apache.logging.log4j.LogManager;
 
 import com.detrav.net.DetravNetwork;
 import com.detrav.proxies.CommonProxy;
 import com.detrav.utils.DetravCreativeTab;
-import com.detrav.utils.GTppHelper;
 import com.detrav.utils.FluidColors;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -66,8 +64,6 @@ public class DetravScannerMod
     @EventHandler
     public void onPostLoad(FMLPostInitializationEvent aEvent) {
         proxy.onPostLoad();
-        if (Loader.isModLoaded("miscutils"))
-        	GTppHelper.generate_OreIDs();
 
         FluidColors.makeColors();
     }

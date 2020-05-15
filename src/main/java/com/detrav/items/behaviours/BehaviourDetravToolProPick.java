@@ -2,8 +2,6 @@ package com.detrav.items.behaviours;
 
 import com.detrav.DetravScannerMod;
 import com.detrav.items.DetravMetaGeneratedTool01;
-import com.detrav.utils.BartWorksHelper;
-import com.detrav.utils.GTppHelper;
 import cpw.mods.fml.common.Loader;
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.Materials;
@@ -216,12 +214,6 @@ public class BehaviourDetravToolProPick extends Behaviour_None {
                                     addOreToHashMap(name, aPlayer);
                                 }
                             }
-                        } else if (Loader.isModLoaded("miscutils") && GTppHelper.isGTppBlock(tBlock) ) {
-                            String name = GTppHelper.getGTppVeinName(tBlock);
-                            if (!name.isEmpty())
-                                addOreToHashMap(name, aPlayer);
-                        } else if (Loader.isModLoaded("bartworks") && BartWorksHelper.isOre(tBlock)){
-                                addOreToHashMap(GT_LanguageManager.getTranslation("bw.blockores.01." + ((BartWorksHelper.getMetaFromBlock(aChunk,x,y,z,tBlock))*-1) + ".name"), aPlayer);
                         } else if (data == 1) {
                             tAssotiation = GT_OreDictUnificator.getAssociation(new ItemStack(tBlock, 1, tMetaID));
                             if ((tAssotiation != null) && (tAssotiation.mPrefix.toString().startsWith("ore"))) {

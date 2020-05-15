@@ -3,8 +3,6 @@ package com.detrav.items.behaviours;
 import com.detrav.items.DetravMetaGeneratedTool01;
 import com.detrav.net.DetravNetwork;
 import com.detrav.net.DetravProPickPacket00;
-import com.detrav.utils.BartWorksHelper;
-import com.detrav.utils.GTppHelper;
 import cpw.mods.fml.common.Loader;
 import gregtech.api.items.GT_MetaBase_Item;
 import gregtech.api.objects.ItemData;
@@ -111,11 +109,6 @@ public class BehaviourDetravToolElectricProPick extends BehaviourDetravToolProPi
                                                 packet.addBlock(c.xPosition * 16 + x, y, c.zPosition * 16 + z, tMetaID);
                                             }
                                         }
-                                    } else if (Loader.isModLoaded("miscutils") && GTppHelper.isGTppBlock(tBlock)) {
-                                        short meta = GTppHelper.getGTppMeta(tBlock);
-                                        packet.addBlock(c.xPosition * 16 + x, y, c.zPosition * 16 + z, meta);
-                                    } else if (Loader.isModLoaded("bartworks") && BartWorksHelper.isOre(tBlock)) {
-                                        packet.addBlock(c.xPosition * 16 + x, y, c.zPosition * 16 + z, BartWorksHelper.getMetaFromBlock(c, x, y, z, tBlock));
                                     } else if (data == 1) {
                                         ItemData tAssotiation = GT_OreDictUnificator.getAssociation(new ItemStack(tBlock, 1, tMetaID));
                                         if ((tAssotiation != null) && (tAssotiation.mPrefix.toString().startsWith("ore"))) {
